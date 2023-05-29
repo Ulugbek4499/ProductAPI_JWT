@@ -6,6 +6,7 @@ using Products_Application.Interfaces.ManageServiceInterfaces;
 using Products_Application.Interfaces.ProcessingServiceInterfaces.Users;
 using Products_Application.Interfaces.ServiceInterfaces;
 using Products_Domain.Models.Permissions;
+using Serilog;
 
 namespace Products_WebAPI_JWT.Controllers
 {
@@ -40,6 +41,7 @@ namespace Products_WebAPI_JWT.Controllers
 
             if (entity == null)
             {
+                Log.Fatal("Fata Error Occuring On Get Permission By Id Method");
                 return BadRequest();    
             }
 
